@@ -2,11 +2,11 @@
 #pragma once
 
 // WiFi Configuration
-#define WIFI_SSID "grand deco"
+#define WIFI_SSID "YOUR_WIFI_SSID"
 #define WIFI_PASSWORD ""
 
 // MQTT Configuration
-#define MQTT_BROKER "192.168.68.107"
+#define MQTT_BROKER "YOUR_MQTT_BROKER_IP"
 #define MQTT_PORT 1883
 #define MQTT_TOPIC_CSI "safehome/csi/1"
 #define MQTT_TOPIC_PRESENCE "safehome/presence/1"

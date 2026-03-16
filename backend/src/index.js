@@ -32,7 +32,6 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server, path: '/ws' });
 
 // Middleware
-app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
@@ -73,7 +72,11 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Root endpoint - serve dashboard (static middleware handles index.html)
+// Root endpoint - serve dashboard
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
+
 // API info endpoint for programmatic access
 app.get('/api', (req, res) => {
   res.json({

@@ -32,7 +32,7 @@ class MQTTBridge {
   }
 
   async connect(brokerUrl) {
-    const url = brokerUrl || process.env.MQTT_BROKER || 'mqtt://192.168.68.107:1883'; // Windows IP (port forwarding to WSL)
+    const url = brokerUrl || process.env.MQTT_BROKER || 'mqtt://YOUR_MQTT_BROKER_IP:1883';
 
     let mqtt;
     try {
